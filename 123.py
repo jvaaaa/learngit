@@ -50,7 +50,11 @@ def lock(L, t=3):
 
 
 print('输入文件输入1，手动输入内容输入2:')
-y=int(input())
+y=input()
+if y.isdigit()==True:
+	y=int(y)
+else:
+	print('输入错误！')
 
 
 if y==1:
@@ -59,27 +63,70 @@ if y==1:
 		L=(f.read())
 		print('文件内容:',L)
 	print('凯撒解密输入1，凯撒加密输入2:')
-	x=int(input())
+	x=input()
+	if x.isdigit()==True:
+		x=int(x)
+	else:
+		print('输入错误！')
+
+
 	if x==1:
 		print('凯撒解密中')
-		n=int(input('请输入位移数：'))
-		print('明文:',unlock(L,n))
+		n=input('请输入位移数(默认为3)：')
+		if n.isdigit()==True:
+			print('明文:',unlock(L,int(n)))
+		elif n=='':
+			print('明文:',unlock(L))
+		else:
+			print('位移数输入错误！')
+
+
 	elif x==2:
 		print('凯撒加密中')
-		n=int(input('请输入位移数：'))
-		print('暗文:',lock(L,n))
+		n=input('请输入位移数(默认为3)：')
+		if n.isdigit()==True:
+			print('明文:',unlock(L,int(n)))
+		elif n=='':
+			print('明文:',unlock(L))
+		else:
+			print('位移数输入错误！')
+	else:
+		print('输入错误！')
+
 
 
 elif y==2:
 	print('凯撒解密输入1，凯撒加密输入2:')
-	x=int(input())
+	x=input()
+	if x.isdigit()==True:
+		x=int(x)
+	else:
+		print('输入错误！')
+
+
 	if x==1:
 		print('凯撒解密中')
 		L=input('请输入暗文：')
-		n=int(input('请输入位移数：'))
-		print('明文:',unlock(L,n))
+		n=input('请输入位移数(默认为3)：')
+		if n.isdigit()==True:
+			print('明文:',unlock(L,int(n)))
+		elif n=='':
+			print('明文:',unlock(L))
+		else:
+			print('位移数输入错误！')
+
+
 	elif x==2:
 		print('凯撒加密中')
 		L=input('请输入明文：')
-		n=int(input('请输入位移数：'))
-		print('暗文:',lock(L,n))
+		n=input('请输入位移数(默认为3)：')
+		if n.isdigit()==True:
+			print('明文:',unlock(L,int(n)))
+		elif n=='':
+			print('明文:',unlock(L))
+		else:
+			print('位移数输入错误！')
+	else:
+		print('输入错误！')
+else:
+		print('输入错误！')
